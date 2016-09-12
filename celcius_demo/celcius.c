@@ -14,17 +14,17 @@
  */
 int main()
 {
-	int tempFrom;
-	int tempTo;
+	float tempFrom;
+	float tempTo;
 
-	int tempLow = 20;
-	int tempHigh = 100;
-	int stepSize = 20;
+	int tempLow = 30;
+	int tempHigh = 35;
+	int stepSize = 1;
 	
 	tempFrom = tempLow;
 	while (tempFrom <= tempHigh) {
-		tempTo = (tempFrom - 32) * 5 / 9; // convert from F to C
-		printf("%d F = %d C\n", tempFrom, tempTo);
+		tempTo = (tempFrom - 32) * (5.0 / 9.0); // convert from F to C
+		printf("%f F = %f C\n", tempFrom, tempTo);
 		tempFrom = tempFrom + stepSize;
 	}
 
