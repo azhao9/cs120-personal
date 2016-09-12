@@ -17,12 +17,25 @@ int main()
 	float tempFrom;
 	float tempTo;
 
-	int tempLow = 30;
-	int tempHigh = 35;
-	int stepSize = 1;
-	
+	int tempLow = 10;
+	int tempHigh = 50;
+	int stepSize = 10;
+
+	char scaleTo;
+
+	printf("Enter 'f' for F to C, 'c' for C to F: ");
+	scaleTo = getchar();
+
 	tempFrom = tempLow;
 	while (tempFrom <= tempHigh) {
+		if (scaleTo == 'c') {
+			printf("got c\n");
+		} else if (scaleTo == 'f') {	
+			printf("got f\n");
+		} else {
+			printf("bad input\n");
+		}
+
 		tempTo = (tempFrom - 32) * (5.0 / 9.0); // convert from F to C
 		printf("%f F = %f C\n", tempFrom, tempTo);
 		tempFrom = tempFrom + stepSize;
