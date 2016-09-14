@@ -13,9 +13,7 @@ int main() {
 	int age;
 	age = 19;
 	
-	printf("Hello, world, my name is Aleck, and my age is %d\n", age);
-	
-	
+	printf("Hello, world, my name is Aleck, and my age is %d\n", age);	
 		
 	return 0;	
 }
