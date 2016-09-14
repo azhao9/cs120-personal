@@ -1,0 +1,29 @@
+commit de764cced8bc9fda9a8462440a6c14fa4a7b1eb2
+Author: Aleck Zhao <aleck.zhao1114@gmail.com>
+Date:   Fri Sep 9 23:02:14 2016 -0400
+
+    Modified a1 to pass all tests
+
+commit 10771e780d744d8359f8b0f582999590612d94cc
+Author: Aleck Zhao <aleck.zhao1114@gmail.com>
+Date:   Fri Sep 9 22:55:09 2016 -0400
+
+    Added gitignore for a1
+
+commit 7fdd45c5e505b0cfbcc3c985d4f2bb4f8cc85d8f
+Author: Aleck Zhao <aleck.zhao1114@gmail.com>
+Date:   Fri Sep 9 22:53:06 2016 -0400
+
+    Added scaffolding code for assignment 1
+
+commit 03ec337feb97a703570c948a1e3e19726f11d943
+Author: Aleck Zhao <aleck.zhao1114@gmail.com>
+Date:   Fri Sep 9 16:02:12 2016 -0400
+
+    Updated README
+
+commit f42558081914803d2ea6f60e3d976ef3ff00ccc9
+Author: Aleck Zhao <aleck.zhao1114@gmail.com>
+Date:   Fri Sep 9 16:00:34 2016 -0400
+
+    Created README

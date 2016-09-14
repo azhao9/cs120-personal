@@ -1,0 +1,49 @@
+Aleck Zhao
+600.120
+9/6/2016
+Assignment 0
+609-903-1111
+azhao9
+aleck.zhao1114@gmail.com
+
+Question 1:
+	
+	0 B C
+
+Question 2: 
+
+	2 2 3 6 4 24 5 120 6 720
+
+Question 3: 
+
+	Prints all powers of 2 less than 1000, beginning with 1.
+
+Question 4:
+	
+	Prints all prime numbers less than 100, beginning with 2.
+
+Question 5: 
+
+	min = ra[0]
+	index = 1
+	
+	while (index < 15)
+		if (ra[index] < min)
+			min = ra[index]
+
+		index = index + 1
+
+	print min
+
+Question 6:
+
+	sum = 0
+	index = 0
+
+	while (index < 200)
+		sum = sum + ra[index]
+		index = index + 1
+
+	avg = sum / 200
+	
+	print avg
