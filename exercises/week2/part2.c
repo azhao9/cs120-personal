@@ -1,5 +1,5 @@
 /*
- * part1.c
+ * part2.c
  * prints "Hello, world, my name is Aleck, and my age is 19"
  *
  * author: Aleck Zhao
