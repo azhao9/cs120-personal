@@ -1,6 +1,6 @@
 /*
  * part1.c
- * prints "Hellow, world, my name if Aleck"
+ * prints "Hello, world, my name is Aleck"
  *
  * author: Aleck Zhao
  * Date: 9/14/2016
