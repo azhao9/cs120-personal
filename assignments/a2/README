@@ -1,0 +1,16 @@
+EN.600.120
+Section 3
+Fall 2016
+Assignment 2
+
+Noah Halpern nhalper1
+Aleck Zhao azhao9
+
+Source Files:
+a2_v1.c : Reads character inputs and prints them
+a2_v2.c : Reads characters and prints number of characters read
+a2_v3.c : Reads characters and prints the number of characters, words, and lines
+a2_v4.c : Reads characters and prints the number of characters, words, lines, and average length of words
+
+Feedback:
+The assignment took us about two hours to complete.  We liked the incremental design, and the git commmit requirement because it forced us to save our work regularly.  We thought the cases involving punctuation were slightly confusing.  Overall was a good first real coding assignment.

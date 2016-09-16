@@ -1,0 +1,143 @@
+commit c2cfa0c7fe494c5af93e0a2ed0c37961e97a6cb9
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 19:00:45 2016 -0400
+
+    Added automatic tester and accompanying files
+
+commit a9fa432a9b4c9eac783ed8b03fac014e0478f0e3
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 18:52:34 2016 -0400
+
+    Updated README and fixed purpose in header of a2_v4.c
+
+commit 454582257b0e5f1b0c5d8795a1af4e43b505e171
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 18:39:03 2016 -0400
+
+    Updated a2_v4.c to pass all automatic tests
+
+commit ed3f5563dab288965771d72ba1120fd19a85d5f5
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 18:21:15 2016 -0400
+
+    Added first version of a2_v4.c
+
+commit 765abf759b0d275170e1238db9d8858c17ef6bd2
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 18:17:50 2016 -0400
+
+    Renamed 'count' variable as 'chars'
+
+commit 8c29d243e6194800df13e0959b341707985a64c6
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 18:15:10 2016 -0400
+
+    Updated a2_v3.c to pass all automatic tests
+
+commit c15308067e1efd415e1d7c05528d5fc5899654b7
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 18:10:29 2016 -0400
+
+    Updated a2_v3.c to count lines and check for punctuation
+
+commit 3b2f253e6ef1119024da0243d4b339bc8fdde3e0
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 17:48:32 2016 -0400
+
+    Added working version of a2_v3.c; counts words, chars, not lines
+
+commit 2e7dfabee5bcadfbe733cec1351dcb74cd651653
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 17:27:18 2016 -0400
+
+    Fiexd buggy a2_v2.c to pass all automatic tests
+
+commit 16a9179a09d66dd8ac8de188c18a4ec3e4452914
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 17:25:44 2016 -0400
+
+    Added a2_v2.c
+
+commit 966995dfd5cf6ec9f289d0aec188a68d9b1ab546
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 17:16:37 2016 -0400
+
+    Fixed buggy a2_v1.c to pass all automatic tests
+
+commit 73d7583cd9cfa4eb09f98dd2a32f18dfc1445928
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 17:04:41 2016 -0400
+
+    Added a2_v1.c
+
+commit b4f722f625962561b9036e8964118907bf0be3f0
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 17:00:26 2016 -0400
+
+    Added README
+
+commit 4246a0c6a2e47934559df8ffa9d4d3d5c3c25138
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 16:15:30 2016 -0400
+
+    Added part4.c for exercise 2-1
+
+commit 8daf00fc1810eeb424a6a39fb3879661cfacc852
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 16:07:01 2016 -0400
+
+    Added part3.c for exercise 2-1
+
+commit 3face24e1f4e52aac70eceaf3ada0ee1d38d578f
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 16:01:35 2016 -0400
+
+    Added part2.c for exercise 2-1
+
+commit 2b380cf0b92493ac6fa1bbc471d2aac261e80a6d
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 16:00:46 2016 -0400
+
+    Fixed part1.c from exercise 2-1
+
+commit ee799fe6ca8b350a5e59a64d7bfec8c67e6c9ac9
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 15:58:23 2016 -0400
+
+    Updated part1.c for part 2 of exercise 2-1
+
+commit 6f2324df8da9cc3cb764a5ea9ee60ad87f289890
+Author: Noah Halpern <Noah@Noahs-MacBook-Pro-2.local>
+Date:   Wed Sep 14 15:49:24 2016 -0400
+
+    part1.c
+
+commit 0609f71f88ed44adcf0622e7e4199836fc36922c
+Author: Noah Halpern <nhalper1@jhu.edu>
+Date:   Sun Sep 11 15:18:38 2016 -0400
+
+    Updated a1.c to pass all automatic tests
+
+commit 353d1255497db4526f9969f9f494223a349d369a
+Author: Noah Halpern <nhalper1@jhu.edu>
+Date:   Sun Sep 11 14:15:13 2016 -0400
+
+    Added .gitignore file for assignment #1
+
+commit c27bb65f353da07c04512033f9f8a82f14f94dce
+Author: Noah Halpern <nhalper1@jhu.edu>
+Date:   Sun Sep 11 14:07:42 2016 -0400
+
+    Added scaffolding for assignment #1
+
+commit 3e58214c9496e2444d5aad10cc92f87fdce7ece0
+Author: Noah Halpern <nhalper1@jhu.edu>
+Date:   Fri Sep 9 15:57:31 2016 -0400
+
+    Updated README
+
+commit 9d59893607fde63b70080d63e849ca053f471648
+Author: Noah Halpern <nhalper1@jhu.edu>
+Date:   Fri Sep 9 15:53:30 2016 -0400
+
+    Created README

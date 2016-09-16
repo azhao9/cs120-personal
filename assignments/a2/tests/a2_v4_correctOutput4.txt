@@ -1,0 +1,5 @@
+-------------
+3 lines
+8 words
+64 characters
+Avg word length: 4.9 characters

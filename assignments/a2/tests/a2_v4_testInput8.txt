@@ -1,0 +1,32 @@
+Unix (all-caps UNIX for the trademark) is a family of multitasking, multiuser
+computer operating systems that derive from the original AT&T Unix, developed
+in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie,
+and others.[3]
+
+Initially intended for use inside the Bell System, AT&T licensed Unix to
+outside parties from the late 1970s, leading to a variety of both academic and
+commercial variants of Unix from vendors such as the University of California,
+Berkeley (BSD), Microsoft (Xenix), IBM (AIX) and Sun Microsystems (Solaris).
+AT&T finally sold its rights in Unix to Novell in the early 1990s, which then
+sold its Unix business to the Santa Cruz Operation (SCO) in 1995,[4] but the
+UNIX trademark passed to the industry standards consortium The Open Group,
+which allows the use of the mark for certified operating systems compliant with
+the Single UNIX Specification (SUS). Among these is Apple's OS X,[5] which is
+the Unix version with the largest installed base as of 2014.
+
+From the power user's or programmer's perspective, Unix systems are
+characterized by a modular design that is sometimes called the "Unix
+philosophy", meaning that the operating system provides a set of simple tools
+that each perform a limited, well-defined function,[6] with a unified
+filesystem as the main means of communication[3] and a shell scripting and
+command language to combine the tools to perform complex workflows. Aside from
+the modular design, Unix also distinguishes itself from its predecessors as the
+first portable operating system: almost the entire operating system is written
+in the C programming language[7] that allowed Unix to reach numerous platforms.
+
+Many clones of Unix have arisen over the years, of which Linux is the most
+popular, having overtaken the popularity of SUS-certified Unices on server
+platforms since its inception in the early 1990s.
+
+
+  - Wikipedia, "Unix", extract
