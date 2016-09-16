@@ -1,0 +1,10 @@
+Enter 5 integers
+The average is 5.600000
+The elements greater than the average are: 8, 10, 
+Enter 5 integers
+The average is 5.600000
+The elements greater than the average are: 8, 10, 
+Enter 5 integers
+The average is 5.600000
+The elements greater than the average are: 8 10 
+The values in the secondary array are: 8 10 
