@@ -181,7 +181,7 @@
 	}
 	\end{lstlisting}
 	\begin{answer*}
-		This returns the double precision average of all elements in the array.
+		This returns the double precision average of all elements in the array. Returns 0 if invalid length.
 		
 	\end{answer*}
 	
@@ -234,7 +234,7 @@
 				printf("Enter integers:\n");
 				int scan = scanf("%d", &cur);
 
-				while (scan > 0) {
+				while (scan) {
 					sum += cur;
 
 					scan = scanf("%d", &cur);
