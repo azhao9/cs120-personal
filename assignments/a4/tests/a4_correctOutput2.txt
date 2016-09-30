@@ -1,0 +1,5 @@
+Found "tip" at 0 2, L
+Found "pop" at 0 0, D
+Found "pop" at 2 0, U
+Found "key" at 0 3, D
+Found "key" at 2 1, R

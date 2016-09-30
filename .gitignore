@@ -1,9 +1,10 @@
 # compiled source #
 ###################
 
-*
+*.*
 
 !*.pdf
 !*.c
 !*.tex
 !*.h
+!*.txt
