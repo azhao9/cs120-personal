@@ -12,8 +12,13 @@
 #define _CS120_SCAFFOLD_WORDSEARCH_H
 
 #include <stdio.h> // you'll need this if you want file handles as arguments 
+#include <string.h> // using string library
+#include <stdlib.h> // using standard library
 
 #define MAX_GRID_SIZE 10 // constant for max grid size
 #define WORD_BUFFER_LENGTH 11 // space for 10 "word" chars plus a null-termination
 
 #endif
+
+// function for reading input file into a matrix
+int read_input(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]);
