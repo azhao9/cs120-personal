@@ -122,13 +122,21 @@ int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 /* Reads input from stdin
  * Truncates words that are longer than the maximum length
  * Stops word when empty space is encountered
+ * returns 1 if EOF or ctrl-D encountered, otherwise 0
  */
-void read_word(char word[]) {
+int read_word(char word[]) {
 	
 	char ch;
 	int wordLen = 0;
 
-	while ((ch = tolower(getchar())) != EOF && !isspace(ch)) {
+	ch = tolower(getchar());
+	if (ch == EOF) {
+		return 1;
+	} else {
+		word[wordLen++] = ch;
+	}
+
+	while (!isspace(ch = tolower(getchar()))) {
 		if (wordLen + 1 >= WORD_BUFFER_LENGTH) {
 			word[WORD_BUFFER_LENGTH - 1] = '\0';
 		} else {
@@ -138,14 +146,28 @@ void read_word(char word[]) {
 
 	word[wordLen] = '\0';
 
+	return 0;
 }
 
+/* Searches grid for a word in 4 directions
+ * right, left, down, up
+ * prints if word is not found
+ */
 void search(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[]) {
+	int r = search_direction(mat, word, 'R');
+	int l = search_direction(mat, word, 'L');
+	int d = search_direction(mat, word, 'D');
+	int u = search_direction(mat, word, 'U');
 
-
+	if (!(r || l || d || u)) {
+		printf("\"%s\" - Not Found\n", word);
+	}
 }
 
-void search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char direction) {
+/* Searches grid for a word, based on input direction
+ * returns 1 if word is found, 0 if not found
+ */
+int search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char direction) {
 	// row and col increments
 	int row_inc;
 	int col_inc;
@@ -183,9 +205,10 @@ void search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char 
 	}
 
 	char ch;
+	int ever_found = 0;
 
 	for (int r = 0; r < MAX_GRID_SIZE; r++) {
-		for (int c = 0; c < MAX_GRID_SIZE; c+) {
+		for (int c = 0; c < MAX_GRID_SIZE; c++) {
 			index = 0;
 			int found = 0;
 			int in_grid = 1;
@@ -210,9 +233,11 @@ void search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char 
 					ch = mat[cur_row][cur_col];
 					index++;
 				} else {
+					// no longer in grid, exit
 					in_grid = 0;
 				}
 
+				// found entire word
 				if (index == length) {
 					found = 1;
 				}
@@ -220,11 +245,11 @@ void search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char 
 			}
 
 			if (found) {
-				printf("Found \"%s\" at %d %d, %c", word, start_row, start_col, direction);
+				printf("Found \"%s\" at %d %d, %c\n", word, start_row, start_col, direction);
+				ever_found = 1;
 			}
-
 		}
 	}
 
-		
+	return ever_found;
 }

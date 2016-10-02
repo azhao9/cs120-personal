@@ -44,9 +44,12 @@ int main (int argc, char* argv[]) {
 
 	char to_search[WORD_BUFFER_LENGTH];
 
+	status = read_word(to_search);			
 
-	read_word(to_search);		
-	// printf("%s\n", to_search);
+	while (!status) {
+		search(mat, to_search);
+		status = read_word(to_search);
+	}
 
 	return 0;
 
