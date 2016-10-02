@@ -18,7 +18,7 @@
 
 int main (int argc, char* argv[]) {
 	if (argc == 1) {
-		fprintf("Need to specifiy input file");
+		printf("Need to specifiy input file");
 		return 1;
 	}
 
@@ -27,9 +27,9 @@ int main (int argc, char* argv[]) {
 
 	char mat[MAX_GRID_SIZE][MAX_GRID_SIZE];
 	
-	int status = read_input(file, mat);
+	int status = read_input_file(file, mat);
 	if (status) {
-		fprintf("invalid grid\n");
+		printf("invalid grid\n");
 		return 1;
 	}
 
@@ -42,9 +42,11 @@ int main (int argc, char* argv[]) {
 
 	printf("\n");
 
-	char to_search[] = char[WORD_BUFFER_LENGTH];
+	char to_search[WORD_BUFFER_LENGTH];
 
-		
+
+	read_word(to_search);		
+	// printf("%s\n", to_search);
 
 	return 0;
 

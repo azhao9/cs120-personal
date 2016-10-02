@@ -25,3 +25,6 @@ int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]);
 
 // reads stdin words
 void read_word(char word[]);
+
+// searches for a word in the grid
+void search(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[]);

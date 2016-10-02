@@ -46,7 +46,7 @@ int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 		return 1;
 	}
 
-	printf("cols: %d\n", col_count);
+	// printf("cols: %d\n", col_count);
 
 	fclose(filehandle);
 
@@ -63,7 +63,7 @@ int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 		cur = fgetc(filehandle);
 	}
 
-	printf("rows: %d", row_count);
+	// printf("rows: %d", row_count);
 
 	if (row_count != col_count) {
 		return 1;
@@ -107,7 +107,7 @@ int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 	for (int r = 0; r < row_count; r++) {
 		for (int c = 0; c < col_count; c++) {
 			cur = fgetc(filehandle);
-			mat[r][c] = cur;
+			mat[r][c] = tolower(cur);
 		}
 
 		// this passes over the newline
@@ -138,8 +138,13 @@ void read_word(char word[]) {
 
 	word[wordLen] = '\0';
 
-	return 0
 }
 
+void search(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[]) {
 
 
+}
+
+void search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char direction) {
+	
+}
