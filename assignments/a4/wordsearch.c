@@ -146,5 +146,85 @@ void search(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[]) {
 }
 
 void search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char direction) {
-	
+	// row and col increments
+	int row_inc;
+	int col_inc;
+
+	// depends on specified search direction
+	if (direction == 'U') {
+		row_inc = -1;
+		col_inc = 0;
+	} else if (direction == 'D') {
+		row_inc = 1;
+		col_inc = 0;
+	} else if (direction == 'R') {
+		row_inc = 0;
+		col_inc = 1;
+	} else if (direction == 'L') {
+		row_inc = 0;
+		col_inc = -1;
+	}
+
+	int start_row;
+	int start_col;
+	int cur_row;
+	int cur_col;
+
+	// index in word to search
+	int index = 0;
+
+	// length of word
+	int length = 0;
+
+	// calculates length of word
+	while (word[index] != '\0') {
+		index++;
+		length++;
+	}
+
+	char ch;
+
+	for (int r = 0; r < MAX_GRID_SIZE; r++) {
+		for (int c = 0; c < MAX_GRID_SIZE; c+) {
+			index = 0;
+			int found = 0;
+			int in_grid = 1;
+
+			start_row = r;
+			start_col = c;
+			cur_row = r;
+			cur_col = c;
+
+			ch = mat[cur_row][cur_col];
+
+			// reached end of grid
+			if (ch == '\0') {
+				continue;
+			}
+
+			while (ch == word[index] && !found && in_grid) {
+				cur_row += row_inc;
+				cur_col += col_inc;
+
+				if (cur_row < MAX_GRID_SIZE && cur_col < MAX_GRID_SIZE) {
+					ch = mat[cur_row][cur_col];
+					index++;
+				} else {
+					in_grid = 0;
+				}
+
+				if (index == length) {
+					found = 1;
+				}
+
+			}
+
+			if (found) {
+				printf("Found \"%s\" at %d %d, %c", word, start_row, start_col, direction);
+			}
+
+		}
+	}
+
+		
 }
