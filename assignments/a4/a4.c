@@ -2,7 +2,7 @@
  * a4.c 
  *
  * Aleck Zhao
- * 1 October, 2016
+ * 2 October, 2016
  * Program for solving word search puzzles.
  *
  *

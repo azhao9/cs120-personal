@@ -1,7 +1,7 @@
 /* wordsearch.h
  *
  * Aleck Zhao
- * 1 October, 2016
+ * 2 October, 2016
  *
  * Headers for functions needed for a word-search puzzle solver
  *

@@ -1,0 +1,12 @@
+Found "car" at 0 4, R
+Found "car" at 0 2, L
+Found "racecar" at 0 0, R
+Found "racecar" at 0 6, L
+Found "baa" at 2 0, R
+Found "baa" at 2 3, R
+Found "baa" at 2 3, L
+Found "baa" at 2 6, L
+Found "baab" at 2 0, R
+Found "baab" at 2 3, R
+Found "baab" at 2 3, L
+Found "baab" at 2 6, L

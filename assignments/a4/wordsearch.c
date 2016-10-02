@@ -1,7 +1,7 @@
 /* wordsearch.c
  *
  * Aleck Zhao
- * 1 October, 2016
+ * 2 October, 2016
  *
  * Functions needed for a word-search puzzle solver.
  *
@@ -45,8 +45,6 @@ int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 		return 1;
 	}
 
-	// printf("cols: %d\n", col_count);
-
 	fclose(filehandle);
 
 	// this open is to check if same number of rows as cols
@@ -58,11 +56,11 @@ int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 	while (cur != EOF) {
 		if (cur == '\n') {
 			row_count++;
+		} else if (isspace(cur)) {
+			return 1;
 		}
 		cur = fgetc(filehandle);
 	}
-
-	// printf("rows: %d", row_count);
 
 	if (row_count != col_count) {
 		return 1;
@@ -230,11 +228,12 @@ int search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char d
 
 				if (cur_row < MAX_GRID_SIZE && cur_col < MAX_GRID_SIZE) {
 					ch = mat[cur_row][cur_col];
-					index++;
 				} else {
 					// no longer in grid, exit
 					in_grid = 0;
 				}
+
+				index++;
 
 				// found entire word
 				if (index == length) {
