@@ -11,9 +11,10 @@
 #include "wordsearch.h"
 #include <ctype.h>
 
-int read_input(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
-
-	
+/* Takes an input file name, and given a matrix to read letters into
+ * Performs various checks to determine if grid is valid
+ */
+int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 
 	FILE *filehandle;
 	char cur;
@@ -118,7 +119,27 @@ int read_input(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 	return 0;
 }
 
+/* Reads input from stdin
+ * Truncates words that are longer than the maximum length
+ * Stops word when empty space is encountered
+ */
+void read_word(char word[]) {
+	
+	char ch;
+	int wordLen = 0;
 
+	while ((ch = getchar()) != EOF && !isspace(ch)) {
+		if (wordLen + 1 >= WORD_BUFFER_LENGTH) {
+			word[WORD_BUFFER_LENGTH - 1] = '\0';
+		} else {
+			word[wordLen++] = ch;
+		}
+	}
+
+	word[wordLen] = '\0';
+
+	return 0
+}
 
 
 

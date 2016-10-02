@@ -21,4 +21,7 @@
 #endif
 
 // function for reading input file into a matrix
-int read_input(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]);
+int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]);
+
+// reads stdin words
+void read_word(char word[]);

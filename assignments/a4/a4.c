@@ -17,15 +17,19 @@
 #include "wordsearch.h"
 
 int main (int argc, char* argv[]) {
+	if (argc == 1) {
+		fprintf("Need to specifiy input file");
+		return 1;
+	}
+
 	char file[30];
 	strcpy(file, argv[1]);
 
 	char mat[MAX_GRID_SIZE][MAX_GRID_SIZE];
-
 	
 	int status = read_input(file, mat);
 	if (status) {
-		printf("invalid grid\n");
+		fprintf("invalid grid\n");
 		return 1;
 	}
 
@@ -35,6 +39,12 @@ int main (int argc, char* argv[]) {
 		}
 		printf("\n");
 	}
+
+	printf("\n");
+
+	char to_search[] = char[WORD_BUFFER_LENGTH];
+
+		
 
 	return 0;
 
