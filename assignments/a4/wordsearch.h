@@ -1,11 +1,10 @@
 /* wordsearch.h
  *
  * Aleck Zhao
- * 30 September 2016
+ * 1 October, 2016
  *
  * Headers for functions needed for a word-search puzzle solver
  *
- * Scaffolding for CS120-F16, A4 - put function prototypes here
  */
 
 #ifndef _CS120_SCAFFOLD_WORDSEARCH_H

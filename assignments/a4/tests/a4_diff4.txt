@@ -1,3 +1,0 @@
-1,2d0
-< ERROR: malformed grid (rows not all the same length)
-< ERROR: file "./tests/a4_puzzle4.txt" does not contain a valid puzzle grid!
