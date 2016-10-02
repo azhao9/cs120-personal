@@ -128,7 +128,7 @@ void read_word(char word[]) {
 	char ch;
 	int wordLen = 0;
 
-	while ((ch = getchar()) != EOF && !isspace(ch)) {
+	while ((ch = tolower(getchar())) != EOF && !isspace(ch)) {
 		if (wordLen + 1 >= WORD_BUFFER_LENGTH) {
 			word[WORD_BUFFER_LENGTH - 1] = '\0';
 		} else {
