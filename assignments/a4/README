@@ -1,7 +1,21 @@
-A4 Scaffolding for CS 120, Fall 2016
-Ben Mitchell
-2016-09-24
+Intermediate Programming
+600.120 Section 3
+Fall 2016
+Assignment 4
 
-This scaffolding should serve as a starting point for your homework project.
+Aleck Zhao (azhao9)
 
-Mostly, it contains a bunch of more-or-less empty files, as a suggestion of what files should be present in your submission.
+This program reads in a grid of letters from a text file, then allows the user to search for strings of letters. The search goes in 4 directions: left, right, up, down. The order in which found statements for the same word are printed might differ from the sample correct outputs.
+
+Source code:
+
+	a4.c: Contains the main function. Takes command line args and runs the program.
+
+	wordsearch.h: Contains function headers used for the program, as well as constant definitions.
+
+	wordsearch.c: Contains functions to run the program, including reading input file, reading word to search, searching by direction, and searching in all directions. To implement diagonal searching, add some extra cases to search by direction function and update the incrementations appropriately.
+
+I thought this assignment was really tedious and not interesting at first, especially dealing with badly formatted grids. I didn't know if there was a way other than opening and closing the same file multiple times. The actual searching part was pretty interesting though, and I liked my solution for searching in multiple directions without replicating code. The project took about 4 hours. For improvement, I think giving some more test cases would be helpful, especially examples of improperly formatted grids.
+
+
+
