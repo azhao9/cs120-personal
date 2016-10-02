@@ -20,7 +20,6 @@ int read_input_file(char file[], char mat[MAX_GRID_SIZE][MAX_GRID_SIZE]) {
 	char cur;
 
 	// this open is to count the number of columns in the first row
-	//
 	filehandle = fopen(file, "r");	
 
 	int col_count = 0;
@@ -154,9 +153,9 @@ int read_word(char word[]) {
  * prints if word is not found
  */
 void search(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[]) {
+	int d = search_direction(mat, word, 'D');
 	int r = search_direction(mat, word, 'R');
 	int l = search_direction(mat, word, 'L');
-	int d = search_direction(mat, word, 'D');
 	int u = search_direction(mat, word, 'U');
 
 	if (!(r || l || d || u)) {
