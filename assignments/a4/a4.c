@@ -25,7 +25,7 @@ int main (int argc, char* argv[]) {
 	
 	int status = read_input(file, mat);
 	if (status) {
-		printf("invalid grid");
+		printf("invalid grid\n");
 		return 1;
 	}
 
