@@ -156,14 +156,17 @@ void search(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[]) {
 
 	for (int row = 0; row < MAX_GRID_SIZE; row++) {
 		for (int col = 0; col < MAX_GRID_SIZE; col++) {
-			int d = search_direction(mat, word, 'D', row, col);
-			int r = search_direction(mat, word, 'R', row, col);
-			int l = search_direction(mat, word, 'L', row, col);
-			int u = search_direction(mat, word, 'U', row, col);
-	
-			if ((r || l || d || u)) {
-				ever_found = 1;
-			}		
+			// only runs the searches if first char matches, saves some time
+			if (word[0] == mat[row][col]) {
+				int d = search_direction(mat, word, 'D', row, col);
+				int r = search_direction(mat, word, 'R', row, col);
+				int l = search_direction(mat, word, 'L', row, col);
+				int u = search_direction(mat, word, 'U', row, col);
+
+				if ((r || l || d || u)) {
+					ever_found = 1;
+				}		
+			}
 		}
 	}
 
