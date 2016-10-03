@@ -1,7 +1,7 @@
 /* wordsearch.c
  *
  * Aleck Zhao
- * 2 October, 2016
+ * 3 October, 2016
  *
  * Functions needed for a word-search puzzle solver.
  *
