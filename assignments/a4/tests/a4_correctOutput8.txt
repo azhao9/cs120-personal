@@ -3,11 +3,11 @@ Found "test" at 0 0, R
 Found "tt" at 0 0, D
 Found "tt" at 0 7, D
 Found "tt" at 1 0, D
-Found "tt" at 8 4, R
-Found "tt" at 8 5, L
 Found "tt" at 1 0, U
 Found "tt" at 1 7, U
 Found "tt" at 2 0, U
+Found "tt" at 8 4, R
+Found "tt" at 8 5, L
 Found "zxc" at 5 0, R
 Found "zxc" at 5 0, R
 Found "qza" at 4 0, D

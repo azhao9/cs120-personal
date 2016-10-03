@@ -6,3 +6,6 @@ a4: a4.o wordsearch.o
 a4.o: a4.c wordsearch.c wordsearch.h
 
 wordsearch.o: wordsearch.c wordsearch.h
+
+clean:
+	rm -f *.o a4

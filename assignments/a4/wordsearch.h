@@ -28,5 +28,5 @@ int read_word(char word[]);
 // searches for a word in the grid
 void search(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[]);
 
-// searches for a word by direction
-int search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char direction);
+// searches for a word by direction, given a position to start from
+int search_direction(char mat[MAX_GRID_SIZE][MAX_GRID_SIZE], char word[], char direction, int row, int col);

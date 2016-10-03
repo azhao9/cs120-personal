@@ -5,7 +5,7 @@ Assignment 4
 
 Aleck Zhao (azhao9)
 
-This program reads in a grid of letters from a text file, then allows the user to search for strings of letters. The search goes in 4 directions: left, right, up, down. The order in which found statements for the same word are printed might differ from the sample correct outputs. My program searches the grid in a certain direction for every possibility, then moves onto another direction. So as long as a word doesn't appear backwards and forwards on the same line, with the backwards occuring earlier, and same for up/down, it should work properly. I only noticed this kind of late so I didn't have much time to recode everything. If the grid was smaller than 10x10, I set the empty entries to \0.
+This program reads in a grid of letters from a text file, then allows the user to search for strings of letters. The search goes in 4 directions: left, right, up, down. The order in which found statements for the same word are printed might differ from the sample correct outputs. If the grid was smaller than 10x10, I set the empty entries to \0.
 
 Source code:
 

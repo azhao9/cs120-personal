@@ -1,5 +1,5 @@
-Found "car" at 0 4, R
 Found "car" at 0 2, L
+Found "car" at 0 4, R
 Found "racecar" at 0 0, R
 Found "racecar" at 0 6, L
 Found "baa" at 2 0, R
