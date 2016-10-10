@@ -1,0 +1,233 @@
+\documentclass{article}
+\usepackage[sexy, hdr, fancy, noauthor]{evan}
+\setlength{\droptitle}{-4em}
+
+\lhead{Assignment 5}
+\rhead{Intermediate Programming}
+\lfoot{}
+\cfoot{\thepage}
+\lstset{language=C}
+\lstdefinestyle{nonumbers}{numbers=none}
+
+\begin{document}
+\title{Assignment 5}
+\author{Aleck Zhao (azhao9) \\ Noah Halpern (nhalper1)}
+\maketitle
+\thispagestyle{fancy}
+
+\section*{Numeric Representations}
+\subsection*{Convert the following decimal numbers to binary:}
+
+\begin{itemize}
+	\item[1.] 3
+		\begin{answer*}
+			11
+		\end{answer*}
+
+	\item[2.] 19
+		\begin{answer*}
+			10011
+		\end{answer*}
+
+	\item[3.] 372
+		\begin{answer*}
+			101110100
+		\end{answer*}
+
+	\item[4.] 2048
+		\begin{answer*}
+			100000000000
+		\end{answer*}
+
+\end{itemize}
+
+\subsection*{Convert the following binary numbers to decimal:}
+
+\begin{itemize}
+	\item[5.] 1011
+		\begin{answer*}
+			11
+		\end{answer*}
+
+	\item[6.] 11000
+		\begin{answer*}
+			24
+		\end{answer*}
+
+	\item[7.] 10101010
+		\begin{answer*}
+			170
+		\end{answer*}
+
+	\item[8.] 10000000001
+		\begin{answer*}
+			1025
+		\end{answer*}
+		
+\end{itemize}
+
+\subsection*{Convert the following decimal numbers to hexadecimal:}
+
+\begin{itemize}
+	\item[9.] 7
+		\begin{answer*}
+			7
+		\end{answer*}
+
+	\item[10.] 12
+		\begin{answer*}
+			C
+		\end{answer*}
+
+	\item[11.] 97
+		\begin{answer*}
+			61
+		\end{answer*}
+
+	\item[12.] 256
+		\begin{answer*}
+			100
+		\end{answer*}
+		
+\end{itemize}
+
+\section*{Code Puzzles}
+
+\begin{itemize}
+	\item[13.] \begin{answer*}
+			This prints out
+
+			6 24 49 1 -18
+		\end{answer*}
+		
+	\item[14.] \begin{answer*}
+			This prints out
+			\begin{lstlisting}[style=nonumbers]
+			11 2 3
+			4 17 6
+			7 24 9
+			\end{lstlisting}
+			
+		\end{answer*}
+
+\end{itemize}
+
+\section*{Code Tracing}
+
+\begin{itemize}
+	\item[15.] \begin{answer*}
+			This prints out
+
+			sdrawrof
+		\end{answer*}
+
+	\item[16.] \begin{answer*}
+			This prints out
+
+			hat the in cat the
+		\end{answer*}
+
+\end{itemize}
+
+\section*{Code Writing}
+
+\begin{itemize}
+	\item[17.] \begin{lstlisting}[style=nonumbers]
+		int* copyArray(const int *orig, int size) {
+
+			int* new = malloc(size * sizeof(int));
+
+			for (int i = 0; i < size; i++) {
+				*(new + i) = *(orig + i);
+			}
+
+			return new;
+		}
+		\end{lstlisting}
+		
+
+	\item[18.] \begin{lstlisting}[style=nonumbers]
+		int isSymmetric(const int *values, int nElements) {
+
+			if (nElements == 0 || nElements == 1) {
+				return 1;
+			}
+
+			if (values[0] == values[nElements - 1]) {
+				return isSymmetric(values + 1, nElements - 2);
+			} else {
+				return 0;
+			}
+		}
+		\end{lstlisting}
+		
+		
+\end{itemize}
+
+\section*{Explanation}
+
+\begin{itemize}
+	\item[19.] Suppose i is an int variable, and p and q are type point to int variables. For each expression, either explain what the given statement accomplishes, or indicate that the given statement is illegal, and why.
+
+		\begin{enumerate}[(a)]
+			\item p = \&i;
+				\begin{answer*}
+					Since p is a pointer type variable, and i is an int variable, \&i is the address of an int variable. This sets the value of p to the address of i.
+				\end{answer*}
+
+			\item *p = i;
+				\begin{answer*}
+					p is an integer type pointer, so by dereferencing it with *p, we set the value of the integer that p points to. This is equal to i.
+				\end{answer*}
+
+			\item *q = \&i;
+				\begin{answer*}
+					This is illegal. *q is the dereferenced pointer, so it is of type integer. However, because i is an int, \&i is of type integer pointer, and this is an illegal assignment.
+				\end{answer*}
+
+			\item p = q;
+				\begin{answer*}
+					Makes the value of p the value of q. Now p points to what q points to.
+				\end{answer*}
+
+		\end{enumerate}
+
+	\item[20.] At the end of the following snippet of code, indicate how many bytes of dynamically allocated memory are allocated to the program, and which pointers can safely be dereferenced. Assume that sizeof(int) is 4 bytes, and no allocations failures occur.
+
+		\begin{lstlisting}[style=nonumbers]
+		int size = 10;
+		int *a = malloc(size * sizeof(int));
+		int *b = realloc(a, size * 2 * sizeof(int));
+		\end{lstlisting}
+		\begin{answer*}
+			The size of int is 4 bytes, so the first *a allocates a block of memory of size $10*4=40$ bytes. Then realloc returns a new pointer to a block of memory $10*2*4=80$ bytes, and copies everything from a to b. Since this new block is larger, it is a new spot in memory, and the previous pointer a is freed. Thus at the end, there are 80 bytes of dynamically allocated memory.
+		\end{answer*}
+		
+	\item[21.] Explain what the keyword const means in the prototypes for the functions in the \textbf{Code Writing} above, and why it makes sense to have it there.
+		\begin{answer*}
+			The keyword const means that the variable cannot be changed within the function. If we do not wish for the variable to be changed within the function, it is desirable to put this within the prototype because if it is inadvertently changed, we will get a compiler warning. This makes it easier to debug.
+		\end{answer*}
+
+	\item[22.] Explain why types in C are not guaranteed to be the same size on all platforms (eg an int may be 4 bytes on a modern computer, but only 2 bytes on an older one). This should be an explanation of why this choice was made (since it was an intentional choice by the language designers), not just an explanation of what happens.
+		\begin{answer*}
+			The language designers did not set the size of ints and other types. Certain hardware architectures might benefit from independently defining the sizes of these types, and the designers of C did not want to artificially constrain these hardware from operating optimally. 
+		\end{answer*}
+
+	\item[23.] Explain \textit{what} incremental development is, and \textit{why} we use it.
+		\begin{answer*}
+			Incremental development is creating a program or programs step by step. The benefit of this is that it makes debugging between steps easier, since we can focus on getting one part right before continuing. It allows the programmer to gradually build up to a fully functional program, and is convenient for version control. If there is a working version that was committed, if the next step breaks the program, we can revert to the previous version and not lose anything.
+		\end{answer*}
+
+	\item[24.] Explain why pointers and dynamic allocation are exposed to the programmer in C; how does this choice support the design goals of the C language?
+		\begin{answer*}
+			Pointers and dynamic allocation are exposed to the programmer in C because the C language was intended to interact with hardware. Directly manipulating memory addresses and directly allocating memory are allowed by this functionality of C, and allow the programmer to do more things. Since C was meant to write operating systems, it is essential that everything runs quickly, and the programmer has liberty to optimize things.
+		\end{answer*}
+
+	\item[25.] Explain why pointers and dynamic allocation are hidden from the programmer in languages like Java and Python; how does this choice support the design goals of these languages?
+		\begin{answer*}
+			Java and Python are intended to be user friendly languages. Pointers and dynamic memory allocation create opportunities for more bugs and segmentation faults and memory leaks, so the designers of Java and Python kept these hidden from the programmer. These languages were meant to write programs and scripts, not operating systems, so there is no need to directly interact with hardware.
+		\end{answer*}
+
+\end{itemize}
+
+\end{document}
