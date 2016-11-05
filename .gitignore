@@ -8,3 +8,5 @@
 !*.tex
 !*.h
 !*.txt
+!*.cpp
+!*.hpp
