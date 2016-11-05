@@ -3,13 +3,18 @@
 
 #include <string>
 #include <map>
+#include <list>
 
 using std::cerr;
 using std::cout;
+using std::cin;
 using std::string;
 using std::map;
+using std::list;
 
-map<string, int> read(string filename);
+list<string> readIntoList();
+
+map<string, int> read(list<string> words);
 
 int main(int argc, char* argv[]) {
 
@@ -19,9 +24,9 @@ int main(int argc, char* argv[]) {
 	}
 
 	string option = argv[1];
-	string filename = argv[2];
 
-	read(filename);
+	list<string> words = readIntoList();
+	map<string, int> bigram = read(words);
 
 	if (option.compare("a") == 0) {
 		// forward alphabetical
@@ -36,32 +41,61 @@ int main(int argc, char* argv[]) {
 		// doesn't match
 		cerr << "Sort option does not match.\n";
 		return 1;
+	}		
+
+	for (auto elem : bigram) {
+		cout << elem.first << " " << elem.second << "\n";
 	}
-			
 
 	return 0;
 
 
 }
 
-// reads text from a file, creates bigram map
-map<string, int> read(string filename) {
-
-	map<string, int> bigram;
-
-	std::fstream file;
-	file.open(filename);
+// reads text from cin into an ordered list
+list<string> readIntoList() {
+	list<string> words;
 
 	string temp;
 
-	if (file.is_open()) {
-		while (!file.eof()) {
-			file >> temp;
-			cout << temp;
+	while(cin >> temp && !cin.eof()) {
+		words.push_back(temp);
+	}
+
+	return words;
+}
+
+// reads text from an ordered list, creates bigram
+map<string, int> read(list<string> words) {
+
+	map<string, int> bigram;
+
+	list<string>::const_iterator iter = words.begin();
+
+	// first word
+	bigram["<START> " + *iter] = 1;
+
+	string temp1, temp2;
+	string key;
+
+	// until last pair of words in file
+	while (std::next(iter, 1) != words.end()) {
+		temp1 = *iter;		
+		temp2 = *(++iter);
+
+		key = temp1 + " " + temp2;
+
+		if (bigram.find(key) == bigram.end()) {
+			// key not currently in map
+			bigram[key] = 1;
+		} else {
+			// key already in map, increment number of times it appears
+			bigram.at(key)++;
 		}
 	}
 
-	file.close();
+	// last word
+	bigram[*iter + " <END>"] = 1;
 
 	return bigram;
 
