@@ -1,5 +1,12 @@
+/* a7a.cpp
+ *
+ * Aleck Zhao
+ * 5 November, 2016
+ * 
+ * Driver for reading input and generating bigram.
+ */
+
 #include <iostream>
-#include <fstream>
 #include <algorithm>
 
 #include <string>
@@ -73,7 +80,7 @@ list<string> readIntoList() {
 
 	string temp;
 
-	while(cin >> temp && !cin.eof()) {
+	while (cin >> temp && !cin.eof()) {
 		words.push_back(temp);
 	}
 
@@ -145,6 +152,7 @@ bool countComp(pair<string, int> s1, pair<string, int> s2) {
 	if ((s1.second) < (s2.second)) {
 		return true;
 	} else if ((s1.second) == (s2.second)) {
+		// if equal counts, sort alphabetically
 		return alphabetical(s1, s2);
 	} else {
 		return false;
