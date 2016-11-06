@@ -46,12 +46,12 @@ int main(int argc, char* argv[]) {
 	} else if (option.compare("r") == 0) {
 		// reverse alphabetical
 		
-	//	sort(vec.begin(), vec.end(), reverseAlphabet);
+		sort(vec.begin(), vec.end(), reverseAlphabet);
 	
 	} else if (option.compare("c") == 0) {
 		// count
 
-	//	sort(vec.begin(), vec.end(), countComp);
+		sort(vec.begin(), vec.end(), countComp);
 	} else {
 		// doesn't match
 		cerr << "Sort option does not match.\n";
