@@ -22,7 +22,7 @@ using std::pair;
 using std::sort;
 
 vector<pair<string, int>> readIntoVector();
-string randomWord(vector<pair<string, int>> words, string cur);
+string randomWord(vector<pair<string, int>> words, string last);
 
 int main(int argc, char* argv[]) {
 
@@ -45,6 +45,7 @@ int main(int argc, char* argv[]) {
 	srand(1);
 
 	vector<pair<string, int>> vec = readIntoVector();
+	randomWord(vec, "he");
 
 	for (auto v : vec) {
 		cout << v.first << " " << v.second << "\n";
@@ -70,13 +71,35 @@ vector<pair<string, int>> readIntoVector() {
 		vec.push_back(p);
 	}
 
-	sort(vec.begin(), vec.end());
-
 	return vec;
 
 }
 
-string randomWord(vector<pair<string, int>> words, string cur) {
+string randomWord(vector<pair<string, int>> words, string last) {
+
+	vector<pair<string, int>>::const_iterator iter = words.begin();
+
+	// vector of key-value pairs that start with the last string generated
+	vector<pair<string, int>> sample;
+
+	size_t len = last.length();
+
+	while (iter != words.end()) {
+
+		string key = (*iter).first;
+
+		if (len <= key.length() && key.substr(0, len) == last) {	
+			// current entry starts with last string generated
+
+			sample.push_back(*iter);
+		}
+
+		iter++;
+	}
+
+	for (auto el : sample) {
+		cout << el.first << "\n";
+	}
 
 	return "";
 
