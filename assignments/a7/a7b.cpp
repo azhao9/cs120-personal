@@ -43,17 +43,13 @@ int main(int argc, char* argv[]) {
 	}
 
 	// random seed
-	srand(1);
+	srand(time(NULL));
 
-	vector<pair<string, int>> vec = readIntoVector();
+	vector<pair<string, int>> words = readIntoVector();
 
+	// generates random sentences
 	for (int i = 0; i < reps; i++) {
-		cout << randomSentence(vec) << "\n";
-
-	}
-
-	for (auto v : vec) {
-		cout << v.first << " " << v.second << "\n";
+		cout << randomSentence(words) << "\n";
 	}
 
 	return 0;
@@ -81,12 +77,22 @@ vector<pair<string, int>> readIntoVector() {
 
 }
 
+// generates a random sentence
 string randomSentence(vector<pair<string, int>> words) {
 
 	// words is sorted, so <START> is at beginning
 	string sentence = words.at(0).first;
 
-	string context = sentence.substr(sentence.find(" ") + 1, sentence.length());
+	string context = sentence.substr(sentence.find(' ') + 1, sentence.length());
+
+	// while we haven't reached the end yet	
+	while (context.compare("<END>") != 0) {
+		// set new context
+		context = randomWord(words, context);
+
+		// concatenate with sentence
+		sentence += " " + context;
+	}
 
 	return sentence;
 
@@ -138,7 +144,7 @@ string randomWord(vector<pair<string, int>> words, string last) {
 			string combined = sample.at(i).first;
 
 			// gets the second part of the string
-			ret = combined.substr(combined.find(" ") + 1, combined.length());
+			ret = combined.substr(combined.find(' ') + 1, combined.length());
 
 			break;
 
