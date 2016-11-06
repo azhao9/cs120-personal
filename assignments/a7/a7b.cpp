@@ -7,6 +7,9 @@
  */
 
 #include <iostream>
+#include <cstdlib>
+#include <algorithm>
+
 #include <string>
 #include <vector>
 
@@ -16,8 +19,10 @@ using std::cout;
 using std::string;
 using std::vector;
 using std::pair;
+using std::sort;
 
 vector<pair<string, int>> readIntoVector();
+string randomWord(vector<pair<string, int>> words, string cur);
 
 int main(int argc, char* argv[]) {
 
@@ -35,6 +40,9 @@ int main(int argc, char* argv[]) {
 		cerr << "Invalid number of lines.\n";
 		return 1;
 	}
+
+	// random seed
+	srand(1);
 
 	vector<pair<string, int>> vec = readIntoVector();
 
@@ -54,6 +62,7 @@ vector<pair<string, int>> readIntoVector() {
 	string temp1, temp2;
 	int temp3;
 
+	// assumes bigram is properly formatted
 	while (cin >> temp1 >> temp2 >> temp3 && !cin.eof()) {
 		string combine = temp1 + " " + temp2;
 
@@ -61,6 +70,14 @@ vector<pair<string, int>> readIntoVector() {
 		vec.push_back(p);
 	}
 
+	sort(vec.begin(), vec.end());
+
 	return vec;
+
+}
+
+string randomWord(vector<pair<string, int>> words, string cur) {
+
+	return "";
 
 }
