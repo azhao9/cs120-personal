@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <list>
+#include <vector>
 
 using std::cerr;
 using std::cout;
@@ -11,10 +12,16 @@ using std::cin;
 using std::string;
 using std::map;
 using std::list;
+using std::pair;
+using std::vector;
 
 list<string> readIntoList();
+map<string, int> readIntoMap(list<string> words);
+vector<pair<string, int>> readIntoVector(map<string, int> bigram);
 
-map<string, int> read(list<string> words);
+bool alphabetical(string s1, string s2);
+bool reverseAlphabet(string s1, string s2);
+bool countComp(pair<string, int> s1, pair<string, int> s2);
 
 int main(int argc, char* argv[]) {
 
@@ -26,7 +33,8 @@ int main(int argc, char* argv[]) {
 	string option = argv[1];
 
 	list<string> words = readIntoList();
-	map<string, int> bigram = read(words);
+	map<string, int> bigram = readIntoMap(words);
+	vector<pair<string, int>> vec = readIntoVector(bigram);
 
 	if (option.compare("a") == 0) {
 		// forward alphabetical
@@ -43,8 +51,8 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}		
 
-	for (auto elem : bigram) {
-		cout << elem.first << " " << elem.second << "\n";
+	for (auto e : vec) {
+		cout << e.first << " " << e.second << "\n";
 	}
 
 	return 0;
@@ -66,7 +74,7 @@ list<string> readIntoList() {
 }
 
 // reads text from an ordered list, creates bigram
-map<string, int> read(list<string> words) {
+map<string, int> readIntoMap(list<string> words) {
 
 	map<string, int> bigram;
 
@@ -78,7 +86,7 @@ map<string, int> read(list<string> words) {
 	string temp1, temp2;
 	string key;
 
-	// until last pair of words in file
+	// until last pair<string, int> of words in file
 	while (std::next(iter, 1) != words.end()) {
 		temp1 = *iter;		
 		temp2 = *(++iter);
@@ -102,3 +110,30 @@ map<string, int> read(list<string> words) {
 }
 
 
+// reads key-value pairs from map into vector
+vector<pair<string, int>> readIntoVector(map<string, int> bigram) {
+	
+	vector<pair<string, int>> vec;
+
+	for (pair<string, int> element : bigram) {
+		vec.push_back(element);
+	}
+
+	return vec;
+
+}
+
+// alphabetical comparator
+bool alphabetical(pair<string, int> s1, pair<string, int> s2) {
+	return (s1.first).compare(s2.first);
+}
+
+// reverse alphabetical comparator
+bool reverseAlphabet(pair<string, int> s1, pair<string, int> s2) {
+	return (s2.first).compare(s1.first);
+}
+
+// comparator by count
+bool countComp(pair<string, int> s1, pair<string, int> s2) {
+	return (s1.second) < (s2.second);
+}
