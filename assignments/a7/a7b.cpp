@@ -27,8 +27,8 @@ string randomSentence(vector<pair<string, int>> words);
 
 int main(int argc, char* argv[]) {
 
-	if (argc == 1) {
-		cerr << "Need to specify number of lines.\n";
+	if (argc != 2) {
+		cerr << "Must specify valid arguments.\n"
 		return 1;
 	}
 

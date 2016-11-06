@@ -34,8 +34,8 @@ bool countComp(pair<string, int> s1, pair<string, int> s2);
 
 int main(int argc, char* argv[]) {
 
-	if (argc == 1) {
-		cerr << "Need to specify ordering.\n";
+	if (argc != 2) {
+		cerr << "Must specify valid arguments.\n"
 		return 1;
 	}
 
@@ -65,12 +65,12 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}		
 
-	for (auto e : vec) {
+	// prints out bigram after sorting
+	for (pair<string, int> e : vec) {
 		cout << e.first << " " << e.second << "\n";
 	}
 
 	return 0;
-
 
 }
 
