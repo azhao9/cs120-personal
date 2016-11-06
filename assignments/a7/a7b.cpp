@@ -23,6 +23,7 @@ using std::sort;
 
 vector<pair<string, int>> readIntoVector();
 string randomWord(vector<pair<string, int>> words, string last);
+string randomSentence(vector<pair<string, int>> words);
 
 int main(int argc, char* argv[]) {
 
@@ -45,7 +46,11 @@ int main(int argc, char* argv[]) {
 	srand(1);
 
 	vector<pair<string, int>> vec = readIntoVector();
-	randomWord(vec, "he");
+
+	for (int i = 0; i < reps; i++) {
+		cout << randomSentence(vec) << "\n";
+
+	}
 
 	for (auto v : vec) {
 		cout << v.first << " " << v.second << "\n";
@@ -71,10 +76,23 @@ vector<pair<string, int>> readIntoVector() {
 		vec.push_back(p);
 	}
 
+	sort(vec.begin(), vec.end());
 	return vec;
 
 }
 
+string randomSentence(vector<pair<string, int>> words) {
+
+	// words is sorted, so <START> is at beginning
+	string sentence = words.at(0).first;
+
+	string context = sentence.substr(sentence.find(" ") + 1, sentence.length());
+
+	return sentence;
+
+}
+
+// generates a random word based on bigram and context
 string randomWord(vector<pair<string, int>> words, string last) {
 
 	vector<pair<string, int>>::const_iterator iter = words.begin();
@@ -88,7 +106,7 @@ string randomWord(vector<pair<string, int>> words, string last) {
 
 		string key = (*iter).first;
 
-		if (len <= key.length() && key.substr(0, len) == last) {	
+		if (len <= key.length() && key.substr(0, len) == last && key.at(len) == ' ') {	
 			// current entry starts with last string generated
 
 			sample.push_back(*iter);
@@ -97,10 +115,37 @@ string randomWord(vector<pair<string, int>> words, string last) {
 		iter++;
 	}
 
-	for (auto el : sample) {
-		cout << el.first << "\n";
+	// calculates total number of occurrences
+	int total = 0;
+	for (size_t i = 0; i < sample.size(); i++) {
+
+		total += sample.at(i).second;
 	}
 
-	return "";
+	// generate a random number from 1 to total inclusive
+	int random = rand() % total + 1 ;
+
+	string ret;
+
+	int sum = 0;
+	for (size_t i = 0; i < sample.size(); i++) {
+
+		sum += sample.at(i).second;
+
+		if (sum >= random) {
+			// if sum is greater than count, we are done, use this word
+	
+			string combined = sample.at(i).first;
+
+			// gets the second part of the string
+			ret = combined.substr(combined.find(" ") + 1, combined.length());
+
+			break;
+
+		}		
+
+	}
+
+	return ret;
 
 }
