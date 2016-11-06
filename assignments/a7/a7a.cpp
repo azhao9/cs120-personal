@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 #include <string>
 #include <map>
@@ -14,13 +15,14 @@ using std::map;
 using std::list;
 using std::pair;
 using std::vector;
+using std::sort;
 
 list<string> readIntoList();
 map<string, int> readIntoMap(list<string> words);
 vector<pair<string, int>> readIntoVector(map<string, int> bigram);
 
-bool alphabetical(string s1, string s2);
-bool reverseAlphabet(string s1, string s2);
+bool alphabetical(pair<string, int> s1, pair<string, int> s2);
+bool reverseAlphabet(pair<string, int> s1, pair<string, int> s2);
 bool countComp(pair<string, int> s1, pair<string, int> s2);
 
 int main(int argc, char* argv[]) {
@@ -38,13 +40,18 @@ int main(int argc, char* argv[]) {
 
 	if (option.compare("a") == 0) {
 		// forward alphabetical
+
+		sort(vec.begin(), vec.end(), alphabetical);
 		
 	} else if (option.compare("r") == 0) {
 		// reverse alphabetical
+		
+	//	sort(vec.begin(), vec.end(), reverseAlphabet);
 	
 	} else if (option.compare("c") == 0) {
 		// count
 
+	//	sort(vec.begin(), vec.end(), countComp);
 	} else {
 		// doesn't match
 		cerr << "Sort option does not match.\n";
@@ -125,15 +132,21 @@ vector<pair<string, int>> readIntoVector(map<string, int> bigram) {
 
 // alphabetical comparator
 bool alphabetical(pair<string, int> s1, pair<string, int> s2) {
-	return (s1.first).compare(s2.first);
+	return (s1.first).compare(s2.first) < 0;
 }
 
 // reverse alphabetical comparator
 bool reverseAlphabet(pair<string, int> s1, pair<string, int> s2) {
-	return (s2.first).compare(s1.first);
+	return (s2.first).compare(s1.first) < 0;
 }
 
 // comparator by count
 bool countComp(pair<string, int> s1, pair<string, int> s2) {
-	return (s1.second) < (s2.second);
+	if ((s1.second) < (s2.second)) {
+		return true;
+	} else if ((s1.second) == (s2.second)) {
+		return alphabetical(s1, s2);
+	} else {
+		return false;
+	}
 }
