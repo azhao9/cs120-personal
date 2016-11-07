@@ -42,6 +42,11 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
+	if (reps <= 0) {
+		cerr << "Must enter positive number of lines.\n";
+		return 1;
+	}
+
 	// random seed with system time
 	srand(time(NULL));
 
@@ -81,7 +86,6 @@ string randomSentence(vector<pair<string, int>> words) {
 
 	// <START> is at beginning of sentence, and is first context
 	string sentence = "<START>";
-
 	string context = "<START>";
 
 	// while we haven't reached the end yet	
