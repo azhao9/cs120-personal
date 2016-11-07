@@ -1,0 +1,11 @@
+thought that 1
+the sandwich 1
+that he 2
+sandwich he 1
+liked that 1
+liked <END> 1
+he thought 1
+he liked 2
+he ate 1
+ate the 1
+<START> he 1
