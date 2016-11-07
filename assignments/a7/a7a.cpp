@@ -1,9 +1,9 @@
 /* a7a.cpp
  *
  * Aleck Zhao
- * 5 November, 2016
+ * 7 November, 2016
  * 
- * Driver for reading input and generating bigram.
+ * Driver for reading input and generating bigrams.
  */
 
 #include <iostream>
@@ -146,12 +146,12 @@ vector<pair<string, int>> readIntoVector(map<string, int> bigram) {
 
 // alphabetical comparator
 bool alphabetical(pair<string, int> s1, pair<string, int> s2) {
-	return (s1.first).compare(s2.first) < 0;
+	return s1 < s2;
 }
 
 // reverse alphabetical comparator
 bool reverseAlphabet(pair<string, int> s1, pair<string, int> s2) {
-	return (s2.first).compare(s1.first) < 0;
+	return s2 < s1;
 }
 
 // comparator by count

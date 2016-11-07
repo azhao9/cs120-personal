@@ -28,7 +28,7 @@ string randomSentence(vector<pair<string, int>> words);
 int main(int argc, char* argv[]) {
 
 	if (argc != 2) {
-		cerr << "Must specify valid arguments.\n"
+		cerr << "Must specify valid arguments.\n";
 		return 1;
 	}
 
@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	// random seed
+	// random seed with system time
 	srand(time(NULL));
 
 	vector<pair<string, int>> words = readIntoVector();
@@ -136,6 +136,7 @@ string randomWord(vector<pair<string, int>> words, string last) {
 	int sum = 0;
 	for (size_t i = 0; i < sample.size(); i++) {
 
+		// increment by current count
 		sum += sample.at(i).second;
 
 		if (sum >= random) {
