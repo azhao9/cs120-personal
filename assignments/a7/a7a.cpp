@@ -35,13 +35,20 @@ bool countComp(pair<string, int> s1, pair<string, int> s2);
 int main(int argc, char* argv[]) {
 
 	if (argc != 2) {
-		cerr << "Must specify valid arguments.\n"
+		cerr << "Must specify valid arguments.\n";
 		return 1;
 	}
 
 	string option = argv[1];
 
 	list<string> words = readIntoList();
+	if (words.size() == 0) {
+		// empty list
+
+		cerr << "Word list was empty.\n";
+		return 1;
+	}
+
 	map<string, int> bigram = readIntoMap(words);
 	vector<pair<string, int>> vec = readIntoVector(bigram);
 
