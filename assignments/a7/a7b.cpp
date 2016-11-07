@@ -72,7 +72,6 @@ vector<pair<string, int>> readIntoVector() {
 		vec.push_back(p);
 	}
 
-	sort(vec.begin(), vec.end());
 	return vec;
 
 }
@@ -80,10 +79,10 @@ vector<pair<string, int>> readIntoVector() {
 // generates a random sentence
 string randomSentence(vector<pair<string, int>> words) {
 
-	// words is sorted, so <START> is at beginning
-	string sentence = words.at(0).first;
+	// <START> is at beginning of sentence, and is first context
+	string sentence = "<START>";
 
-	string context = sentence.substr(sentence.find(' ') + 1, sentence.length());
+	string context = "<START>";
 
 	// while we haven't reached the end yet	
 	while (context.compare("<END>") != 0) {
@@ -140,13 +139,15 @@ string randomWord(vector<pair<string, int>> words, string last) {
 		sum += sample.at(i).second;
 
 		if (sum >= random) {
-			// if sum is greater than count, we are done, use this word
+			// if sum is greater than or equal to random, we are done, use this word
+			// this is guaranteed to be true by the end
 	
 			string combined = sample.at(i).first;
 
 			// gets the second part of the string
 			ret = combined.substr(combined.find(' ') + 1, combined.length());
 
+			// break to use the first time this happens
 			break;
 
 		}		
