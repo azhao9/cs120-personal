@@ -1,0 +1,13 @@
+600.120 Intermediate Programming
+Section 3 Fall 2016
+Assignment 7
+
+Aleck Zhao azhao9
+
+This program is split into two parts. Part a reads input of words and creates a language model based on the bigram frequency. Part b generates random sentences based on the input of a language model. The makefile creates both the a7a and a7b executables, and testa7.sh is the automatic test script that runs with the files in the tests/ directory.
+
+a7a.cpp: Includes functions to read input text. Output is a language model that is a list of bigrams and their frequencies, sorted based on user command line input "a" for alphabetical, "r" for reverse alphabetical, and "c" for count.
+
+a7b.cpp: Includes functions to read language model. Randomly generates sentences based on relative frequencies of bigrams based on the context word, starting with the bigram that includes <START>. Allows the user to specify number of random sentences generated.
+
+I liked this assignment. Was good practice for using the STL, and was interesting to implement. Instructions were very clear. I personally took data structures already, so I understand maps and lists, but I think aspects of runtime and benefits of each should be touched upon. I imagine testing part b is tough because we'd need to generate many many sentences to get a good approximation of the distributions, and compare to what they should be.
