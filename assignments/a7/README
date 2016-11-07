@@ -4,7 +4,7 @@ Assignment 7
 
 Aleck Zhao azhao9
 
-This program is split into two parts. Part a reads input of words and creates a language model based on the bigram frequency. Part b generates random sentences based on the input of a language model. The makefile creates both the a7a and a7b executables, and testa7.sh is the automatic test script that runs with the files in the tests/ directory.
+This program is split into two parts. Part a reads input of words and creates a language model based on the bigram frequency. Part b generates random sentences based on the input of a language model. The makefile creates both the a7a and a7b executables, and testa7.sh is the automatic test script that runs with the files in the tests/ directory. I ran the a, r, c tests for each test input, and output each to a separate file with format a7_correctOutput_x#.txt where x is a, r, or c, and # is the test number.
 
 a7a.cpp: Includes functions to read input text. Output is a language model that is a list of bigrams and their frequencies, sorted based on user command line input "a" for alphabetical, "r" for reverse alphabetical, and "c" for count.
 
